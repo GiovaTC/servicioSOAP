@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8bc30f58-c1cc-4b1c-b0f8-571ee2058a4f" activeEnvironment="Default" name="CalculatorService" resourceRoot="" soapui-version="5.7.2" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="963eb63e-9254-417b-91e4-d0a9a3613034" wsaVersion="NONE" name="ICalculatorServiceSoap" type="wsdl" bindingName="{http://tempuri.org/}ICalculatorServiceSoap" soapVersion="1_1" anonymous="optional" definition="file:/D:/Source%207.0/CalculatorService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\Source%207.0\CalculatorService.wsdl"><con:part><con:url>file:\D:\Source%207.0\CalculatorService.wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <message name="AddRequest">
+    <part name="a" type="xsd:int"/>
+    <part name="b" type="xsd:int"/>
+  </message>
+  <message name="AddResponse">
+    <part name="AddResult" type="xsd:int"/>
+  </message>
+  <portType name="ICalculatorService">
+    <operation name="Add">
+      <input message="tns:AddRequest"/>
+      <output message="tns:AddResponse"/>
+    </operation>
+  </portType>
+  <binding name="ICalculatorServiceSoap" type="tns:ICalculatorService">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/Add"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://tempuri.org/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://tempuri.org/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CalculatorService">
+    <port name="ICalculatorServiceSoap" binding="tns:ICalculatorServiceSoap">
+      <soap:address location="http://localhost:5000/CalculatorService.svc"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://DESKTOP-BCQ9F1A:8088/mockICalculatorServiceSoap</con:endpoint><con:endpoint>http://localhost:5000/CalculatorService.svc</con:endpoint></con:endpoints><con:operation id="cad5bb7c-fede-4a33-80ff-af6e3cb074a1" isOneWay="false" action="http://tempuri.org/Add" name="Add" bindingOperationName="Add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dbe0de96-64b2-4d11-a2c0-0197e2857941" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:5073/CalculatorService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Add soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <a xsi:type="xsd:int">8</a>\r
+         <b xsi:type="xsd:int">2</b>\r
+      </tem:Add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Add"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="19c1fa07-701b-486f-95ea-8512eb33cd2e" port="8088" path="/mockICalculatorServiceSoap" host="DESKTOP-BCQ9F1A" name="ICalculatorServiceSoap MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="Add" id="edc52442-ee09-42cc-8a2c-ef05ea6178fd" interface="ICalculatorServiceSoap" operation="Add"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="4b578951-a194-4570-bdb0-aa325a516108" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:AddResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <AddResult xsi:type="xsd:int">?</AddResult>
+      </tem:AddResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Add"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
