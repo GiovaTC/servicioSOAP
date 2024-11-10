@@ -26,7 +26,7 @@ app.UseEndpoints(endpoints =>
 
         if (context.Request.Query.ContainsKey("wsdl"))
         {
-            var wsdlFilePath = "D:/Source 7.0/CalculatorService.wsdl"; 
+            var wsdlFilePath = "D:/Source 7.0/CalculatorService.wsdl"; //  var wsdlFilePath = "path_to_your_wsdl_file/CalculatorService.wsdl"; // Cambia esto a la ubicación correcta
             var wsdlContent = await File.ReadAllTextAsync(wsdlFilePath);
             context.Response.ContentType = "application/xml";
             await context.Response.WriteAsync(wsdlContent);
