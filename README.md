@@ -1,5 +1,8 @@
 ![image](https://github.com/user-attachments/assets/a6a0a024-51e1-4d60-9099-f1ff6be98da6)
 
+![image](https://github.com/user-attachments/assets/9d127ea6-37c8-4f7f-8caf-d46b97143f82)
+
+
 # WSDL for ICalculatorService
 
 This is a WSDL file defining a SOAP service for a simple calculator. The service provides an operation called "Add" that takes two integer inputs and returns the sum as an integer.
